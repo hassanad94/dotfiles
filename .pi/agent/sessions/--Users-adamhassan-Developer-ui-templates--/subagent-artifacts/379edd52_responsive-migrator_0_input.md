@@ -1,0 +1,3 @@
+# Task for responsive-migrator
+
+Fix the tablet and mobile responsiveness for all sections after TrustedBy on the homepage. Scope files: src/app/page.tsx, src/components/ImpactFeatures.*, src/components/FeatureShowcase.*, src/components/HowItWorks.*, src/components/BlogArticles.*, src/components/Footer.*. Preserve desktop layout as much as possible. Use existing data-section/data-pencil-id attributes. Requirements: no horizontal overflow at <=991px, <=767px, <=479px; text readable; controls usable; cards not overly tall/crowded; sections should stack cleanly with sensible padding; FeatureShowcase carousel must remain usable on mobile/tablet; Footer should not overflow. Use Bun for verification (`bun run build`). Make edits directly and summarize changed files.
