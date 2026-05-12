@@ -3,6 +3,7 @@ export PATH="$HOME/.bun/bin:$PATH"
 
 # mise
 eval "$(mise activate zsh)"
+export PATH="$HOME/go/bin:$PATH"
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
 
