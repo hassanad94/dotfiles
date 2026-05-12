@@ -6,3 +6,4 @@
 .pi/agent/bin/
 .pi/context-mode/sessions/
 .pi/memory/
+config/nvim/lazy-lock.json

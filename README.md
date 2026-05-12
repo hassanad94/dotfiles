@@ -1,14 +1,21 @@
 # Dotfiles
 
-My personal configuration files and settings for macOS.
+My personal configuration files for macOS.
 
-## Contents
+## Structure
 
-- **Zsh**: Shell configuration (`.zshrc`)
-- **Git**: Git configuration (`.gitconfig`)
-- **Warp**: Warp terminal settings (`.warp/`)
-- **mise**: CLI tool versions (`mise.toml`)
-- **Brew**: Package list (`Brewfile`)
+```
+dotfiles/
+├── .zshrc              # Interactive shell config
+├── .zshenv             # PATH for all shells + GUI apps
+├── .gitconfig          # Git identity and settings
+├── .gitignore          # Global git ignores
+├── Brewfile            # Homebrew packages
+├── sync.sh             # Symlink everything to home
+└── config/
+    ├── mise/           # Dev tool versions (go, node, bun, python)
+    └── nvim/           # Neovim config (lazy.nvim)
+```
 
 ## Fresh Machine Setup
 
@@ -19,28 +26,28 @@ My personal configuration files and settings for macOS.
 # 2. Clone dotfiles
 git clone https://github.com/hassanad94/dotfiles.git ~/dotfiles
 
-# 3. Install brew packages (includes mise)
+# 3. Install brew packages (includes mise, git, gh, z, fzf...)
 brew bundle install --file=~/dotfiles/Brewfile
 
-# 4. Symlink configs
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.zprofile ~/.zprofile
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/mise.toml ~/.config/mise/config.toml
+# 4. Symlink all configs
+chmod +x ~/dotfiles/sync.sh && ~/dotfiles/sync.sh
 
-# 5. Reload shell and install CLI tools
-source ~/.zshrc
+# 5. Install dev tools
 mise install
 
 # 6. Install global bun packages
 bun add -g @earendil-works/pi-coding-agent
 ```
 
-## Adding a New CLI Tool
+## Adding a CLI Tool
 
 ```bash
-# Add to mise.toml and install
-mise use -g <tool>@latest
-```
+# Runtime (go, node, python, bun...)
+mise use -g <tool>@latest  # then commit config/mise/config.toml
 
-Then commit `mise.toml`.
+# Brew package
+# Add to Brewfile, then: brew bundle install --file=~/dotfiles/Brewfile
+
+# Global bun package
+bun add -g <package>       # then add to README step 6
+```
