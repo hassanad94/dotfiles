@@ -3,3 +3,6 @@
 .pi/agent/mcp-cache.json
 .pi/agent/run-history.jsonl
 .pi/agent/sessions/
+.pi/agent/bin/
+.pi/context-mode/sessions/
+.pi/memory/
