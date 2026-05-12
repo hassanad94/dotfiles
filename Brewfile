@@ -14,3 +14,4 @@ brew "ffmpeg"
 
 # Shell utilities
 brew "z"
+brew "fzf"
