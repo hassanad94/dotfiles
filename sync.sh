@@ -30,4 +30,12 @@ for d in mise nvim; do
   link "$DOTFILES/config/$d" "$HOME/.config/$d"
 done
 
-echo "Done! Open a new shell to apply changes."
+# LaunchAgents (GUI app environment)
+mkdir -p "$HOME/Library/LaunchAgents"
+for plist in "$DOTFILES/Library/LaunchAgents/"*.plist; do
+  name=$(basename "$plist")
+  link "$plist" "$HOME/Library/LaunchAgents/$name"
+  launchctl load "$HOME/Library/LaunchAgents/$name" 2>/dev/null
+done
+
+echo "Done! Restart any GUI apps to pick up the new PATH."
