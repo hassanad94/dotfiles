@@ -24,6 +24,7 @@ brew bundle install --file=~/dotfiles/Brewfile
 
 # 4. Symlink configs
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.zprofile ~/.zprofile
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/mise.toml ~/.config/mise/config.toml
 
